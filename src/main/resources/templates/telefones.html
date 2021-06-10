@@ -72,10 +72,25 @@ function limpar(){
 			<input class="waves-effect waves-light btn" type="submit"
 					value="Adicionar" >
 					
-				
+
 			</div>
 		</form>
+
 </div>
+
+<table class="striped">
+	<tr th:each="fone : ${telefone}">
+		<td th:text="${fone.numero}"></td>
+		<td th:text="${fone.tipo}"></td>
+		<td >
+			<a th:href="@{/pessoa/removertelefone/{idtelefone}(idtelefone=${fone.id})}">
+				Excluir
+			</a>
+		</td>
+		
+	</tr>
+
+</table>
 
 </body>
 </html>
